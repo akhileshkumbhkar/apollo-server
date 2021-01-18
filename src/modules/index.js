@@ -1,4 +1,3 @@
-
 import { fileLoader, mergeTypes } from 'merge-graphql-schemas';
 import path from 'path';
 
@@ -17,6 +16,9 @@ export default {
     },
     Mutation: {
       ...trainee.Mutation
+    },
+    Subscription: {
+      ...trainee.traineeSubscription
     }
   },
   typeDefs
