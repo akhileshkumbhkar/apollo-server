@@ -15,7 +15,8 @@ export default {
       ...trainee.Query
     },
     Mutation: {
-      ...trainee.Mutation
+      ...trainee.Mutation,
+      ...user.Mutation
     },
     Subscription: {
       ...trainee.traineeSubscription
