@@ -1,7 +1,8 @@
 input CreateUserInput {
     name: String!
     email: String!
-    role: String!
+    password: String!
+    role: String
 }
 
 input UpdateUserInput {
@@ -9,9 +10,14 @@ input UpdateUserInput {
     name: String
     email: String
     role: String
+    password: String
 }
 
 input LoginInput {
     password: String!
     email: String!
+}
+
+input Deletetrainee{
+    id: ID!
 }
