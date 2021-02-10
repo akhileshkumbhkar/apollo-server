@@ -2,28 +2,28 @@ import { RESTDataSource } from 'apollo-datasource-rest';
 import config from '../config/configurations';
 
 export default class TraineeAPI extends RESTDataSource {
-  constructor() {
-    super();
-    this.baseURL = `${config.SERVICE_URL}/api`;
-  }
+    constructor() {
+        super();
+        this.baseURL = `${config.SERVICE_URL}/api`;
+    }
 
-  willSendRequest(request) {
-    request.headers.set('Authorization', this.context.token);
-  }
+    willSendRequest(request) {
+        request.headers.set('Authorization', this.context.token);
+    }
 
-  getTrainees() {
-    return this.get('/trainee');
-  }
+    getTrainees({ skip, limit, sort, search }) {
+        return this.get('/trainee', { skip, limit, sort, search });
+    }
 
-  createTrainee(payload) {
-    return this.post('/trainee', payload);
-  }
+    createTrainee(payload) {
+        return this.post('/trainee', payload);
+    }
 
-  updateTrainee(payload) {
-    return this.put('/trainee', payload);
-  }
+    updateTrainee(payload) {
+        return this.put('/trainee', payload);
+    }
 
-  deleteTrainee(id) {
-    return this.delete(`/trainee?id=${id}`);
-  }
+    deleteTrainee(id) {
+        return this.delete(`/trainee/${id}`);
+    }
 }

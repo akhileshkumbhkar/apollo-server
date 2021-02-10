@@ -4,5 +4,5 @@ export default {
 	  const response = await userAPI.getMe();
 	  return response.data;
 	}
-  };
+  }
   
